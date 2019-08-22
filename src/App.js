@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import VideoList from './components/video-list';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App() {
+  const videos = [
+    {
+      url: 'https://www.youtube.com/embed/pD_T02kcLWI',
+      title: 'Building Pausable Timer Component Timer in React JS',
+      author: 'Mark Tellez',
+      viewCount: 0,
+    },
+    {
+      url: 'https://www.youtube.com/embed/3ohRNCa1Yau',
+      title: 'Building a CryptoCard React JS Component for Live Crypto Currency Dashboard',
+      author: 'Mark Tellez',
+      viewCount: 11,
+    }
+  ]
 
-export default App;
+  return (
+    <div
+      className="page-container"
+    >
+      <VideoList videos={videos} />
+    </div>
+  )
+}
